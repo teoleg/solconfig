@@ -1,4 +1,4 @@
-#!/bin/env python
+
 import SimpleHTTPServer
 import SocketServer
 
