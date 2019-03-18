@@ -10,26 +10,26 @@
 service-config:
    network:
        nodes: [ hostname:port, host2:port ]
-       vpn:  my_vpn
+   application:
+        name: 2FSN
    service:
-       msgVpn: my_vpn_test
-       app_name: 2FSN
-       service_name: DMDIST
+       name: DMDIST
        type: DIRECT_NON_PERSIST, JNDI_NON_PERSIST
-       pubslishers: [ user1 ]
-       subscribers: [ user2, user3 ]
+       pubslishers: [ USER1 ]
+       subscribers: [ USER2, USER3 ]
        objects: [ PriceX, PriceY ]
 
 
 #  System will create the following configuration
-#  Client user1
+#  VPN: 2FSN_VPN
+#   Client 2FSN_USER1, 2FSN_USER2, 2FSN_USER3
 #    ACLProfileExceotions
 #      publish:   2FSN/DMDIST/PriceX/Event
 #      publish:   2FSN/DMDIST/PriceX/Request
-#  sdfdsf
+#
 #      subscribe: 2FSN/DMDIST/PriceX/Reply/>
 #
-#
-#
+#   JNDI Topics:
+#      2FSN/
 #
 #
