@@ -26,7 +26,7 @@ service-config:
 #    ACLProfileExceotions
 #      publish:   2FSN/DMDIST/PriceX/Event
 #      publish:   2FSN/DMDIST/PriceX/Request
-#
+#  sdfdsf
 #      subscribe: 2FSN/DMDIST/PriceX/Reply/>
 #
 #
