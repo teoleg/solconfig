@@ -1,17 +1,35 @@
+
+# create service records in Solace
+# ACL execptions
+# ClientProfile
+# Clients
+# Topic schema : APP/SERVICE/TYPE/OBJECT
+# example:       2FSN/DMDIST/REQUEST/>
+#                2FSN/DMDIST/EVENT
+
 service-config:
    network:
-       node: hostname:port
+       nodes: [ hostname:port, host2:port ]
        vpn:  my_vpn
    service:
        msgVpn: my_vpn_test
-       type: Direct
-   pubslishers: [ user1 ]
-   subscribers: [ user2, user3 ]
-   publish_exceptions:
-        - "APP1/EVENT"
-        - "APP2/REQUEST"
-   subscribe_exception:
-        - "APP1/REPLY/>"
+       app_name: 2FSN
+       service_name: DMDIST
+       type: DIRECT_NON_PERSIST, JNDI_NON_PERSIST
+       pubslishers: [ user1 ]
+       subscribers: [ user2, user3 ]
+       objects: [ PriceX, PriceY ]
 
 
-
+#  System will create the following configuration
+#  Client user1
+#    ACLProfileExceotions
+#      publish:   2FSN/DMDIST/PriceX/Event
+#      publish:   2FSN/DMDIST/PriceX/Request
+#
+#      subscribe: 2FSN/DMDIST/PriceX/Reply/>
+#
+#
+#
+#
+#
