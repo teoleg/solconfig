@@ -1,0 +1,15 @@
+service-config:
+   network:
+       node: hostname:port
+       vpn:  my_vpn
+   service:
+       msgVpn: my_vpn_test
+           type: direct # persistant
+   pubslishers: [ user1 ]
+   subscribers: [ user2, user3 ]
+   publish_exceptions:
+           - "APP1/EVENT"
+       - "APP2/REQUEST"
+   subscribe_exception:
+        - "APP1/REPLY/>"
+
